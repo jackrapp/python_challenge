@@ -5,37 +5,40 @@ import os
 budget_data = os.path.join("budget_data.csv")
 
 profit = 0
+months = 0
+value = 0
 increase = 0
 decrease = 0
 
 #pull data from csv file in git hub folder
 with open(budget_data, newline="") as csvfile:
     records = csv.reader(csvfile, delimiter = ",")
-    next(records, None)
+    next(records)
     
 #calculate
 #total number of months in data
     for row in records:
-        #total number of months in data
-        months = len(list(records))
+        #monthly profit/loss
+        value = int(row[1])
+        #find number of months
+        months = months + 1
         #total net profit/loss
-        profit =+ int(row[1])
-        #average mothly change
-        avg_monthly = int(profit)/int(months)
+        profit = profit + value
         #greatest increase in profits
-        if int(row[1]) > increase:
-            increase == int(row[1])
+        increase = max(increase, value)
         #greatest decrease in losses
-        elif int(row[1]) < decrease:
-            decrease == int(row[1])
+        decrease = min(decrease, value)
+
+    #total net profit/loss
+    avg_monthly = int(profit)/int(months)
 
 #print
 print('''
 Financial Analysis
 ------------------''')
 print(f"Total Months: {months}")
-        #Total: {profit}
-        #Average Change: {avg_monthly}
-        #Greatest Profit: {increase}
-        #Greatest Loss: {decrease}
+print(f"Total: {profit}")
+print(f"Average Change: {avg_monthly}")
+print(f"Greatest Profit: {increase}")
+print(f"Greatest Loss: {decrease}")
 
