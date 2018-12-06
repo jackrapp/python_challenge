@@ -30,6 +30,7 @@ with open(election_data, newline = "") as csvfile:
         sort_list(row[2])
         total = total + 1
 
+#find overall winner
 for name in candidate_list:
     winner = max(candidate_list[name], winner)
     if candidate_list[name] == winner:
@@ -41,16 +42,21 @@ print('''Election Results
 ----------------''')
 print(f"Total Votes: {total}")
 print("----------------")
+#percentage calculation
 for name in candidate_list:
     print(f"{name}: {'{:.2%}'.format(candidate_list[name]/total)} ({candidate_list[name]})")
 print("----------------")
 print(f"Winner: {pywinner}")
 print("----------------")
 
+with open("pypoll_winner.txt", "w") as pypoll_winner:
+    print("Election Results", file = pypoll_winner)
+    print("----------------", file = pypoll_winner)
+    print(f"Total Votes: {total}", file = pypoll_winner)
+    print("----------------", file = pypoll_winner)
+    for name in candidate_list:
+        print(f"{name}: {'{:.2%}'.format(candidate_list[name]/total)} ({candidate_list[name]})", file = pypoll_winner)
+    print("----------------", file = pypoll_winner)
+    print(f"Winner: {pywinner}", file = pypoll_winner)
+    print("----------------", file = pypoll_winner)  
 
-
-#The percentage of votes each candidate won
-
-#The total number of votes each candidate won
-
-#The winner of the election based on popular vote.
