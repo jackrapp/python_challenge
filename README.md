@@ -1,32 +1,32 @@
 # python_challenge
 
-PyBank
+## PyBank
 
-In this challenge, you are tasked with creating a Python script for analyzing the financial records of your company. You will give a set of financial data called budget_data.csv. The dataset is composed of two columns: Date and Profit/Losses. (Thankfully, your company has rather lax standards for accounting so the records are simple.)
+Python script for analyzing the financial records of a company given a dataset with two columns: Date and Profit/Losses. Prints summary of records:
 
-
-Your task is to create a Python script that analyzes the records to calculate each of the following:
-
-    - The total number of months included in the dataset
-    - The total net amount of "Profit/Losses" over the entire period
-    - The average change in "Profit/Losses" between months over the entire period
-    - The greatest increase in profits (date and amount) over the entire period
-    - The greatest decrease in losses (date and amount) over the entire period
-In addition, your final script should both print the analysis to the terminal and export a text file with the results.
-
-
-PyPoll
-
-In this challenge, you are tasked with helping a small, rural town modernize its vote-counting process. (Up until now, Uncle Cleetus had been trustfully tallying them one-by-one, but unfortunately, his concentration isn't what it used to be.)
+```Financial Analysis
+------------------
+Total Months: 86
+Total: 38382578
+Average Change: 446309.0465116279
+Greatest Profit: Feb-2012 (1170593)
+Greatest Loss: Sep-2013 (-1196225)
+```
 
 
-You will be give a set of poll data called election_data.csv. The dataset is composed of three columns: Voter ID, County, and Candidate. 
+## PyPoll
 
-Your task is to create a Python script that analyzes the votes and calculates each of the following:
+Python script that analyzes election data (Voter ID, County, and Candidate) and prints out a summary of the election results:
 
-    - The total number of votes cast
-    - A complete list of candidates who received votes
-    - The percentage of votes each candidate won
-    - The total number of votes each candidate won
-    - The winner of the election based on popular vote.
-In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+```Election Results
+----------------
+Total Votes: 3521001
+----------------
+Khan: 63.00% (2218231)
+Correy: 20.00% (704200)
+Li: 14.00% (492940)
+O'Tooley: 3.00% (105630)
+----------------
+Winner: Khan
+----------------
+```
